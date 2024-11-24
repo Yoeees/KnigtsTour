@@ -15,7 +15,6 @@
             placeholder="Enter a number between 3 and 32"
           />
           
-          <!-- Generate Button (No need for router-link) -->
           <button
             @click="handleGenerate"
             class="w-full max-w-xs px-6 py-4 mb-3 font-bold uppercase transition-transform duration-200 bg-black border-2 border-white rounded-md hover:scale-105 hover:bg-gray-800 active:scale-100"
@@ -23,7 +22,6 @@
             Generate
           </button>
           
-          <!-- Smaller Cancel Button -->
           <button
             @click="closeDialog"
             class="w-full max-w-xs px-4 py-2 font-bold uppercase transition-transform duration-200 bg-red-500 border-2 border-white rounded-md hover:scale-105 hover:bg-red-600 active:scale-100"
@@ -37,9 +35,8 @@
   
   <script setup>
   import { ref, defineProps, defineEmits } from 'vue';
-  import { useRouter } from 'vue-router';  // Import the useRouter hook
+  import { useRouter } from 'vue-router';  
   
-  // Props from the parent component
   const props = defineProps({
     show: {
       type: Boolean,
@@ -48,28 +45,27 @@
   });
   
   const emit = defineEmits(['close', 'generate-board']);
-  const router = useRouter();  // Initialize the router
+  const router = useRouter();  
   
-  const boardSize = ref(8); // Default value
+  const boardSize = ref(8); 
   
   const handleGenerate = () => {
     if (boardSize.value < 3 || boardSize.value > 32) {
       alert("Please enter a board size between 3 and 32.");
     } else {
       console.log("Generating board with size:", boardSize.value);
-      emit('generate-board', boardSize.value); // Emit the event with the board size
-      closeDialog(); // Close the dialog
+      emit('generate-board', boardSize.value); 
+      closeDialog();
       
-      // Navigate to the generateboard route after handling the board generation
+
       router.push({ name: 'Chessboard', query: { size: boardSize.value } });
     }
   };
   
   const closeDialog = () => {
-    emit('close'); // Emit an event to close the dialog
+    emit('close'); 
   };
   </script>
   
   <style scoped>
-  /* Additional custom styles, if needed */
   </style>
