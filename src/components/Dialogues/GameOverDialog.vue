@@ -26,13 +26,13 @@ const emit = defineEmits(['close', 'playAgain']);
 
 const messages = {
   closed: {
-    title: "Congratulations! 🎉",
-    description: "You've completed a closed Knight's Tour! The knight can return to its starting position.",
+    title: "Congratulations! ",
+    description: "You've completed a CLOSED KNIGHT'S TOUR. The knight can return to its starting position.",
     class: "bg-gray-900 border-green-500 text-green-400"
   },
   open: {
-    title: "Tour Completed! 🎯",
-    description: "You've completed an open Knight's Tour! All squares were visited exactly once.",
+    title: "Tour Completed!",
+    description: "You've completed an OPEN KNIGHT'S TOUR! All squares were visited exactly once.",
     class: "bg-gray-900 border-blue-500 text-blue-400"
   },
   incomplete: {
@@ -71,6 +71,7 @@ const goToMainMenu = () => {
                 </p>
                 <div class="mt-4 space-y-2 bg-black bg-opacity-50 p-4 rounded-lg border border-gray-700">
                   <p class="font-semibold text-gray-300">Game Statistics:</p>
+                  <p class="text-gray-400 capitalize">Tour Type: {{ tourType }}</p>
                   <p class="text-gray-400">Total Moves: {{ moveCount }}</p>
                   <p class="text-gray-400">Board Size: {{ boardSize }}x{{ boardSize }}</p>
                   <p class="text-gray-400">Squares Covered: {{ Math.round((moveCount / (boardSize * boardSize)) * 100) }}%</p>

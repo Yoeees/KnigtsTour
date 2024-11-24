@@ -15,6 +15,7 @@
             placeholder="Enter a number between 3 and 32"
           />
           
+          
           <button
             @click="handleGenerate"
             class="w-full max-w-xs px-6 py-4 mb-3 font-bold uppercase transition-transform duration-200 bg-black border-2 border-white rounded-md hover:scale-105 hover:bg-gray-800 active:scale-100"

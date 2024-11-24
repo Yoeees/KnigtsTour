@@ -19,14 +19,16 @@
       >
         Play
       </button>
-
+      
       <button class="w-full max-w-xs px-6 py-4 mb-3 font-bold uppercase transition-transform duration-200 bg-black border-2 border-white rounded-md hover:scale-105 hover:bg-gray-800 active:scale-100">
-        Find Best Path
+        Challenge
       </button>
+      <router-link to="/Customize" class="w-full">
+        <button class="w-full max-w-xs px-6 py-4 mb-3 font-bold uppercase transition-transform duration-200 bg-black border-2 border-white rounded-md hover:scale-105 hover:bg-gray-800 active:scale-100">
+        Customize
+      </button>
+      </router-link>
 
-      <button class="w-full max-w-xs px-6 py-4 mb-3 font-bold uppercase transition-transform duration-200 bg-black border-2 border-white rounded-md hover:scale-105 hover:bg-gray-800 active:scale-100">
-        Exit
-      </button>
     </div>
 
     <!-- Dialog Component (controlled by showDialog) -->
