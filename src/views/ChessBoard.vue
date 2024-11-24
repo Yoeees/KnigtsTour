@@ -320,7 +320,6 @@ onMounted(createChessboard);
       </div>
     </div>
     
-    <IsClosedTour v-if="isClosedTour" />
     <GameOverDialog
       :is-open="showGameOverDialog"
       :tour-type="gameState.tourType"
